@@ -1,0 +1,42 @@
+@startuml
+
+class Customer{
+    phone
+    name
+    email
+}
+
+Customer "*"--"*" Event
+Customer "1"--"*" Booking
+
+
+
+class Event{
+    name
+    starttime
+    duration
+    price
+    participants
+}
+Event "*"--"1" Location
+
+class Booking{
+    confirmation
+    waitingList
+}
+
+note bottom
+deltagerliste?
+end note
+
+Booking "*"--"1" Event
+
+class Location{
+    name
+    address
+    zip
+    city
+    gps
+}
+
+@enduml

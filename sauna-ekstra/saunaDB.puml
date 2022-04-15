@@ -1,0 +1,47 @@
+@startuml
+
+class Person{
+    phone
+    name
+    key: email
+}
+
+class User{
+    key: username
+    password
+}
+
+class Event{
+    key: EventId
+    name
+    starttime
+    gpsLocation
+    duration
+    price
+    maxParticipants
+}
+
+class Booking{
+    key: EventId
+    key: username
+    amountBookings
+    status
+    eventOver
+    orderDate
+}
+note bottom
+status = confirmed or waiting
+eventOver = yes/no, yes = event has passed
+orderDate = the time the booking was made
+end note
+
+
+class Location{
+    name
+    address
+    zip
+    city
+    key: gps
+}
+
+@enduml
